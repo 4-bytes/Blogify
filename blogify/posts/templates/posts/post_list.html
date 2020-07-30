@@ -1,14 +1,19 @@
-<!doctype html>
 
-<head>
-  <meta charset="utf-8">
-  <title>Blogify - Posts</title>
+{% extends 'base.html' %}
 
-</head>
 
-<body>
+{% block content %}
 <h1>Blogify</h1>
 <p>List of posts made by others</p>
-</body>
+<div class"posts">
+  {% for post in posts %}
 
-</html>
+  <div class="post">
+    <h2><a href="{% url 'posts:detail' slug=post.slug %}">{{ post.title }}</a></h2>
+    <p> {{ post.date }} </p>
+    <p> {{ post.post_snippet }} </p>
+  </div>
+
+  {% endfor  %}
+</div>
+{% endblock %}
