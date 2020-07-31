@@ -6,7 +6,6 @@ from .models import Post
 # Create your views here.
 
 def post_list(request):
-    print("tws23")
     posts = Post.objects.all().order_by("date") # grabs all posts from db ordered by date
     return render(request, "posts/post_list.html", {"posts": posts}) # create dic to send to template with data retrieved from db
 
