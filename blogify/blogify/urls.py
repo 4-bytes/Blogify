@@ -19,13 +19,15 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
+from posts import views as post_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')), # include the accounts urls from the accounts app
     path('posts/', include('posts.urls')), # include the posts.urls from the posts app
     path('about/', views.about),
-    path('', views.home), # r'^$'
+    path('', post_views.post_list, name="home"), # r'^$'
 ]
 
 urlpatterns += staticfiles_urlpatterns()
