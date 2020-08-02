@@ -9,28 +9,37 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <h1><a href="{% url 'home' %}"><img src="{% static 'blogify.png' %}" /></a></h1>
+    <header class="wrapper">
+        <a href="{% url 'home' %}"><img src="{% static 'blogify.png' %}" /></a>
         <nav>
             <ul>
                 {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'posts:list' %}">Browse</a>
+                </li>
+                <li>
+                    <a href="{% url 'posts:create' %}" class="highlight">Create New Post</a>
+                </li>
+                <li>
+                    <a href="{% url 'posts:own' %}" class="highlight">My Posts</a>
+                </li>
                 <li>
                     <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                         {% csrf_token %}
                         <button type="submit">Logout</button>
                     </form>
                 </li>
-                <li>
-                    <a href="{% url 'posts:create' %}" class="highlight">Create Post</a>
-                </li>
                 {% else %}
                 <li>
+                    <a href="{% url 'posts:list' %}">Browse Posts</a>
                     <a href="{% url 'accounts:login' %}">Login</a>
                     <a href="{% url 'accounts:signup' %}">Sign Up</a>
                 </li>
                 {% endif %}
             </ul>
         </nav>
+    </header>
+    <div class="wrapper">
         {% block content %}
         {% endblock %}
     </div>
