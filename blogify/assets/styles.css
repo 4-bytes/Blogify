@@ -1,6 +1,5 @@
 body{
     background-color: #0f121f;
-    
     color: #fff;
 }
 
@@ -8,12 +7,185 @@ body *{
     font-family: Ubuntu;
 }
 
-h1, h2, h3, h4, h5{
-    font-weight: normal;
-    margin: 0;
+h2 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2.4em;
+    font-weight: bold;
 }
 
 a, a:hover, a:visited{
     color: #fff;
     text-decoration: none;
+}
+
+.wrapper {
+ max-width: 960px;
+ margin: 0 auto;   
+}
+
+div.wrapper h1 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2.4em;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+nav {
+    justify-self: end;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav button {
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+}
+
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.post{
+    padding: 10px;
+    border: solid #1eb8df;
+    position: relative;
+    padding-bottom: 40px;
+
+}
+
+.posts .post img {
+    max-width: 100%;
+}
+
+
+.post h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.post .author {
+    padding: 10px;
+    background:#1eb8df;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: #0f121f;
+}
+
+.post-detail .post img {
+    max-width: 100%
+}
+
+.post-detail .post h2 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2em;
+}
+
+.post-detail .post p {
+    text-align: center;
+    
+}
+
+.site-form {
+    margin-top: 60px;
+    border: solid #1eb8df;
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea {
+    display: block;
+    margin: 20px 0 10px 0;
+    padding: 10px;
+}
+
+a.highlight {
+    border: 2px solid white;
+    background-color:#1eb8df;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight:bold;
+}
+
+.helptext, .helptext ul {
+    margin: 0 auto 20px;
+    color: #bbb;
+    font-size: 0.9em;
+    display: block;
+}
+
+.errorlist li {
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid red;
+    color: red;
+    margin: 10px 0;
+}
+
+.errorlist {
+    padding: 0;
+}
+
+.site-form input[type="submit"]{
+    background: #1eb8df;
+    border: 0;
+    font-size: 1.2em;
+    border-radius: 10px;
+    color: white;
+    font-weight:bold;
+    margin: 10px 0;
+    border: 2px solid white;
+
+}
+
+.site-form input[readonly]{
+    background: #CCC; 
+    color: #333; 
+    border: 1px solid #666;
+}
+
+nav ul li a {
+    border: 2px solid white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1eb8df;
+    color:white;
+    font-weight:bold;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li .logout-link button {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-weight:bold;
+}
+
+.post-create h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
 }
