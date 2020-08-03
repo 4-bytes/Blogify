@@ -8,7 +8,7 @@ from . import forms
 # Create your views here.
 
 def post_list(request):
-    posts = Post.objects.all().order_by("date") # grabs all posts from db ordered by date
+    posts = Post.objects.all().order_by("-date") # grabs all posts from db ordered by date
     return render(request, "posts/post_list.html", {"posts": posts}) # create dic to send to template with data retrieved from db
 
 def post_detail(request, slug):
@@ -27,3 +27,8 @@ def post_create(request):
     else:
         form = forms.CreatePost()
     return render(request, "posts/post_create.html", { 'form' : form })
+
+@login_required(login_url="/accounts/login")
+def post_own(request):
+    posts = Post.objects.filter(author=request.user) # filter posts by current logged in user
+    return render(request, "posts/post_own.html", {"posts": posts})
