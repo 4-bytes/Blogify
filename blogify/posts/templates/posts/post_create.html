@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h2>Create New Post: </h2>
 <div class="post-create">
-    <h2>Create New Post: </h2>
     <form class="site-form" action="{% url 'posts:create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Create">
     </form>
 </div>
-
+<script src="/static/slugify.js"></script>
 {% endblock %}

@@ -3,18 +3,8 @@
 
 
 {% block content %}
-
-{% if user.is_authenticated %}
-<div class="greeting">
-  <p>Hi {{request.user}}. </p>
-  <p>Last logged in: {{request.user.last_login}}</p>
-  </div>
-{% else %}
-
-{% endif %}
-<h2>Browse: </h2>
+<h2>My Posts: </h2>
  <div class="posts">
-
   {% for post in posts %}
   <a href="{% url 'posts:detail' slug=post.slug %}">
   <div class="post">
