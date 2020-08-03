@@ -103,6 +103,10 @@ nav button {
     
 }
 
+.greeting p {
+    margin: 20px;
+}
+
 .site-form {
     margin-top: 60px;
     border: solid #1eb8df;
